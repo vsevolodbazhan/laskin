@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "laskin"
-version = "0.2.0"
+version = "0.3.0"
 description = ""
 authors = ["Vsevolod Bazhan <vsevozhan@yandex.ru>"]
 license = "MIT"
