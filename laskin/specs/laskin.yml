@@ -4,6 +4,9 @@ info:
   title: Laskin
   version: 0.2.0
 
+servers:
+  - url: https://tomoru-calculator.herokuapp.com/
+
 components:
   schemas:
     TwoArguments:
