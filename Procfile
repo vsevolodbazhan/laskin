@@ -1,1 +1,1 @@
-web: gunicorn laskin.app
+web: gunicorn app

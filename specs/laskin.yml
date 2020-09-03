@@ -25,7 +25,7 @@ components:
 paths:
   /less:
     post:
-      operationId: api.less
+      operationId: laskin.api.less
       description: Меньше
       requestBody:
         content:
@@ -42,7 +42,7 @@ paths:
 
   /greater:
     post:
-      operationId: api.greater
+      operationId: laskin.api.greater
       description: Больше
       requestBody:
         content:
@@ -59,7 +59,7 @@ paths:
 
   /less-or-equal:
     post:
-      operationId: api.less_or_equal
+      operationId: laskin.api.less_or_equal
       description: Меньше или равно
       requestBody:
         content:
@@ -76,7 +76,7 @@ paths:
 
   /greater-or-equal:
     post:
-      operationId: api.greater_or_equal
+      operationId: laskin.api.greater_or_equal
       description: Больше или равно
       requestBody:
         content:
@@ -93,7 +93,7 @@ paths:
 
   /equal:
     post:
-      operationId: api.equal
+      operationId: laskin.api.equal
       description: Равно
       requestBody:
         content:

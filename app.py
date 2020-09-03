@@ -11,7 +11,5 @@ app = connexion.App(__name__, specification_dir="./specs")
 app.add_api("laskin.yml")
 app.add_error_handler(status.INTERNAL_SERVER_ERROR, handle_server_error)
 
-application = app.app
-
 if __name__ == "__main__":
-    app.run()
+    app.run(debug=True)

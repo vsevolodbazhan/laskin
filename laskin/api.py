@@ -1,4 +1,4 @@
-from operations import comparison_operation, operator
+from .operations import comparison_operation, operator
 
 
 def less(body):
