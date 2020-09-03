@@ -9,9 +9,6 @@ from connexion import NoContent
 FIRST_ARGUMENT_KEYWORD = "a"
 SECOND_ARGUMENT_KEYWORD = "b"
 
-TRUE = HTTPStatus.OK
-FALSE = HTTPStatus.NO_CONTENT
-
 
 def extract_numbers(data):
     a, b = data[FIRST_ARGUMENT_KEYWORD], data[SECOND_ARGUMENT_KEYWORD]
@@ -22,8 +19,8 @@ def comparison_operation(data, operation):
     a, b = extract_numbers(data=data)
 
     if operation(a, b) is True:
-        return NoContent, TRUE
-    return NoContent, FALSE
+        return NoContent, HTTPStatus.OK
+    return NoContent, HTTPStatus.NO_CONTENT
 
 
 def mathematical_operation(data, operation):
