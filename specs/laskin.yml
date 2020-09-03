@@ -1,7 +1,8 @@
 openapi: 3.0.3
 
 info:
-  title: Laskin
+  title: Калькулятор
+  description: Математические операции.
   version: 0.2.0
 
 servers:
