@@ -34,6 +34,8 @@ paths:
           description: Да
         204:
           description: Нет
+        500:
+          description: Что-то пошло не так
 
   /greater:
     post:
@@ -49,6 +51,8 @@ paths:
           description: Да
         204:
           description: Нет
+        500:
+          description: Что-то пошло не так
 
   /less-or-equal:
     post:
@@ -64,6 +68,8 @@ paths:
           description: Да
         204:
           description: Нет
+        500:
+          description: Что-то пошло не так
 
   /greater-or-equal:
     post:
@@ -79,6 +85,8 @@ paths:
           description: Да
         204:
           description: Нет
+        500:
+          description: Что-то пошло не так
 
   /equal:
     post:
@@ -94,3 +102,5 @@ paths:
           description: Да
         204:
           description: Нет
+        500:
+          description: Что-то пошло не так
