@@ -1,0 +1,22 @@
+openapi: 3.0.3
+
+info:
+  title: Laskin
+  version: 0.2.0
+
+paths:
+  /:
+    get:
+      operationId: api.hello
+      responses:
+        200:
+          description: Hello from Laskin!
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                required:
+                  - message
