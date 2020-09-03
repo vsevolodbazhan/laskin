@@ -10,13 +10,16 @@ FIRST_ARGUMENT_KEYWORD = "a"
 SECOND_ARGUMENT_KEYWORD = "b"
 
 
-def extract_numbers(data):
-    a, b = data[FIRST_ARGUMENT_KEYWORD], data[SECOND_ARGUMENT_KEYWORD]
-    return Decimal(a), Decimal(b)
+def extract_number(data, keyword):
+    number = data[keyword]
+    return Decimal(number)
 
 
 def comparison_operation(data, operation):
-    a, b = extract_numbers(data=data)
+    a, b = (
+        extract_number(data=data, keyword=FIRST_ARGUMENT_KEYWORD),
+        extract_number(data=data, keyword=SECOND_ARGUMENT_KEYWORD),
+    )
 
     if operation(a, b) is True:
         return NoContent, HTTPStatus.OK
@@ -24,7 +27,10 @@ def comparison_operation(data, operation):
 
 
 def mathematical_operation(data, operation):
-    a, b = extract_numbers(data=data)
+    a, b = (
+        extract_number(data=data, keyword=FIRST_ARGUMENT_KEYWORD),
+        extract_number(data=data, keyword=SECOND_ARGUMENT_KEYWORD),
+    )
 
     value = operation(a, b)
     return {"value": f"{value:.2f}"}, HTTPStatus.OK
