@@ -24,3 +24,10 @@ def comparison_operation(data, operation):
     if operation(a, b) is True:
         return NoContent, TRUE
     return NoContent, FALSE
+
+
+def mathematical_operation(data, operation):
+    a, b = extract_numbers(data=data)
+
+    value = operation(a, b)
+    return {"value": str(value)}, HTTPStatus.OK

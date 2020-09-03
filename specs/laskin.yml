@@ -22,6 +22,22 @@ components:
       required:
         - a
         - b
+    Value:
+      type: object
+      properties:
+        value:
+          type: string
+          description: Значение
+      required:
+        - value
+
+  responses:
+    Result:
+      description: Результат
+      content:
+        application/json:
+          schema:
+            $ref: "#/components/schemas/Value"
 
 paths:
   /less:
@@ -116,5 +132,90 @@ paths:
           description: Да
         204:
           description: Нет
+        500:
+          description: Что-то пошло не так
+
+  /add:
+    post:
+      operationId: laskin.api.add
+      tags:
+        - tomoru/call
+      summary: Сложить
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/TwoArguments"
+      responses:
+        200:
+          $ref: "#/components/responses/Result"
+        500:
+          description: Что-то пошло не так
+
+  /substract:
+    post:
+      operationId: laskin.api.substract
+      tags:
+        - tomoru/call
+      summary: Вычесть
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/TwoArguments"
+      responses:
+        200:
+          $ref: "#/components/responses/Result"
+        500:
+          description: Что-то пошло не так
+
+  /multiply:
+    post:
+      operationId: laskin.api.multiply
+      tags:
+        - tomoru/call
+      summary: Умножить
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/TwoArguments"
+      responses:
+        200:
+          $ref: "#/components/responses/Result"
+        500:
+          description: Что-то пошло не так
+
+  /divide:
+    post:
+      operationId: laskin.api.divide
+      tags:
+        - tomoru/call
+      summary: Разделить
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/TwoArguments"
+      responses:
+        200:
+          $ref: "#/components/responses/Result"
+        500:
+          description: Что-то пошло не так
+
+  /exponentiate:
+    post:
+      operationId: laskin.api.exponentiate
+      tags:
+        - tomoru/call
+      summary: Возвести в степень
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/TwoArguments"
+      responses:
+        200:
+          $ref: "#/components/responses/Result"
         500:
           description: Что-то пошло не так

@@ -1,4 +1,4 @@
-from .operations import comparison_operation, operator
+from .operations import comparison_operation, mathematical_operation, operator
 
 
 def less(body):
@@ -19,3 +19,23 @@ def greater_or_equal(body):
 
 def equal(body):
     return comparison_operation(data=body, operation=operator.eq)
+
+
+def add(body):
+    return mathematical_operation(data=body, operation=operator.add)
+
+
+def substract(body):
+    return mathematical_operation(data=body, operation=operator.sub)
+
+
+def multiply(body):
+    return mathematical_operation(data=body, operation=operator.mul)
+
+
+def divide(body):
+    return mathematical_operation(data=body, operation=operator.truediv)
+
+
+def exponentiate(body):
+    return mathematical_operation(data=body, operation=operator.pow)
