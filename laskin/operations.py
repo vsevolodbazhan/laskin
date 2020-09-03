@@ -1,6 +1,3 @@
-__all__ = ["operator", "comparison_operation"]
-
-import operator
 from decimal import Decimal
 from http import HTTPStatus
 

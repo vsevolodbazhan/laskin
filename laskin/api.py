@@ -1,9 +1,6 @@
-from .operations import (
-    comparison_operation,
-    mathematical_operation,
-    operator,
-    range_operation,
-)
+import operator
+
+from .operations import comparison_operation, mathematical_operation, range_operation
 
 
 def less(body):
