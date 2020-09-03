@@ -1,6 +1,7 @@
 __all__ = ["operator", "comparison_operation"]
 
 import operator
+from decimal import Decimal
 from http import HTTPStatus
 
 from connexion import NoContent
@@ -14,7 +15,7 @@ FALSE = HTTPStatus.NO_CONTENT
 
 def extract_numbers(data):
     a, b = data[FIRST_ARGUMENT_KEYWORD], data[SECOND_ARGUMENT_KEYWORD]
-    return float(a), float(b)
+    return Decimal(a), Decimal(b)
 
 
 def comparison_operation(data, operation):
