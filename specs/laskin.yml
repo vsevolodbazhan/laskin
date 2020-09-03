@@ -10,7 +10,7 @@ servers:
 
 components:
   schemas:
-    TwoArguments:
+    BinaryArguments:
       type: object
       properties:
         a:
@@ -22,6 +22,20 @@ components:
       required:
         - a
         - b
+
+    RangeArguments:
+      type: object
+      properties:
+        a:
+          type: string
+          description: Число
+        b:
+          type: string
+          description: Левая граница
+        c:
+          type: string
+          description: Правая граница
+
     Value:
       type: object
       properties:
@@ -50,7 +64,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: "#/components/schemas/TwoArguments"
+              $ref: "#/components/schemas/BinaryArguments"
       responses:
         200:
           description: Да
@@ -69,7 +83,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: "#/components/schemas/TwoArguments"
+              $ref: "#/components/schemas/BinaryArguments"
       responses:
         200:
           description: Да
@@ -88,7 +102,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: "#/components/schemas/TwoArguments"
+              $ref: "#/components/schemas/BinaryArguments"
       responses:
         200:
           description: Да
@@ -107,7 +121,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: "#/components/schemas/TwoArguments"
+              $ref: "#/components/schemas/BinaryArguments"
       responses:
         200:
           description: Да
@@ -126,7 +140,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: "#/components/schemas/TwoArguments"
+              $ref: "#/components/schemas/BinaryArguments"
       responses:
         200:
           description: Да
@@ -145,7 +159,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: "#/components/schemas/TwoArguments"
+              $ref: "#/components/schemas/BinaryArguments"
       responses:
         200:
           $ref: "#/components/responses/Result"
@@ -162,7 +176,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: "#/components/schemas/TwoArguments"
+              $ref: "#/components/schemas/BinaryArguments"
       responses:
         200:
           $ref: "#/components/responses/Result"
@@ -179,7 +193,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: "#/components/schemas/TwoArguments"
+              $ref: "#/components/schemas/BinaryArguments"
       responses:
         200:
           $ref: "#/components/responses/Result"
@@ -196,7 +210,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: "#/components/schemas/TwoArguments"
+              $ref: "#/components/schemas/BinaryArguments"
       responses:
         200:
           $ref: "#/components/responses/Result"
@@ -213,9 +227,47 @@ paths:
         content:
           application/json:
             schema:
-              $ref: "#/components/schemas/TwoArguments"
+              $ref: "#/components/schemas/BinaryArguments"
       responses:
         200:
           $ref: "#/components/responses/Result"
+        500:
+          description: Что-то пошло не так
+
+  /within-exclusive-range:
+    post:
+      operationId: laskin.api.within_exclusive_range
+      tags:
+        - tomoru/call
+      summary: В строгом интервале
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/RangeArguments"
+      responses:
+        200:
+          description: Да
+        204:
+          description: Нет
+        500:
+          description: Что-то пошло не так
+
+  /within-inclusive-range:
+    post:
+      operationId: laskin.api.within_inclusive_range
+      tags:
+        - tomoru/call
+      summary: В нестрогом интервале
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/RangeArguments"
+      responses:
+        200:
+          description: Да
+        204:
+          description: Нет
         500:
           description: Что-то пошло не так

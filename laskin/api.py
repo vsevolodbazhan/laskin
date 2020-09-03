@@ -1,4 +1,9 @@
-from .operations import comparison_operation, mathematical_operation, operator
+from .operations import (
+    comparison_operation,
+    mathematical_operation,
+    operator,
+    range_operation,
+)
 
 
 def less(body):
@@ -39,3 +44,11 @@ def divide(body):
 
 def exponentiate(body):
     return mathematical_operation(data=body, operation=operator.pow)
+
+
+def within_exclusive_range(body):
+    return range_operation(data=body, exclusive=True)
+
+
+def within_inclusive_range(body):
+    return range_operation(data=body, exclusive=False)
