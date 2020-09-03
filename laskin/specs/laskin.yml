@@ -20,3 +20,28 @@ paths:
                     type: string
                 required:
                   - message
+
+  /greater-or-equal:
+    post:
+      operationId: api.greater_or_equal
+      description: Больше или равно
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                a:
+                  type: string
+                  description: A
+                b:
+                  type: string
+                  description: B
+              required:
+                - a
+                - b
+      responses:
+        200:
+          description: Да
+        204:
+          description: Нет
