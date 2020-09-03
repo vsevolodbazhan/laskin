@@ -11,10 +11,10 @@ components:
       properties:
         a:
           type: string
-          description: A
+          description: Первое число
         b:
           type: string
-          description: B
+          description: Второе число
       required:
         - a
         - b
