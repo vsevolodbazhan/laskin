@@ -3,7 +3,7 @@ openapi: 3.0.3
 info:
   title: Калькулятор
   description: Математические операции.
-  version: 0.2.0
+  version: 0.3.0
 
 servers:
   - url: https://tomoru-calculator.herokuapp.com/
