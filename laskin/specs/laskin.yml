@@ -20,22 +20,6 @@ components:
         - b
 
 paths:
-  /:
-    get:
-      operationId: api.hello
-      responses:
-        200:
-          description: Hello from Laskin!
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  message:
-                    type: string
-                required:
-                  - message
-
   /less:
     post:
       operationId: api.less

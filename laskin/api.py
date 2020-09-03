@@ -1,10 +1,6 @@
 from operations import comparison_operation, operator
 
 
-def hello():
-    return {"message": "Hello!"}, 200
-
-
 def less(body):
     return comparison_operation(data=body, operation=operator.lt)
 
