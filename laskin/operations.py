@@ -30,4 +30,4 @@ def mathematical_operation(data, operation):
     a, b = extract_numbers(data=data)
 
     value = operation(a, b)
-    return {"value": str(value)}, HTTPStatus.OK
+    return {"value": f"{value:.2f}"}, HTTPStatus.OK
