@@ -35,6 +35,10 @@ components:
         c:
           type: string
           description: Правая граница
+      required:
+        - a
+        - b
+        - c
 
     Value:
       type: object
