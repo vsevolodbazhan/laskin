@@ -4,6 +4,21 @@ info:
   title: Laskin
   version: 0.2.0
 
+components:
+  schemas:
+    TwoArguments:
+      type: object
+      properties:
+        a:
+          type: string
+          description: A
+        b:
+          type: string
+          description: B
+      required:
+        - a
+        - b
+
 paths:
   /:
     get:
@@ -21,6 +36,51 @@ paths:
                 required:
                   - message
 
+  /less:
+    post:
+      operationId: api.less
+      description: Меньше
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/TwoArguments"
+      responses:
+        200:
+          description: Да
+        204:
+          description: Нет
+
+  /greater:
+    post:
+      operationId: api.greater
+      description: Больше
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/TwoArguments"
+      responses:
+        200:
+          description: Да
+        204:
+          description: Нет
+
+  /less-or-equal:
+    post:
+      operationId: api.less_or_equal
+      description: Меньше или равно
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/TwoArguments"
+      responses:
+        200:
+          description: Да
+        204:
+          description: Нет
+
   /greater-or-equal:
     post:
       operationId: api.greater_or_equal
@@ -29,17 +89,22 @@ paths:
         content:
           application/json:
             schema:
-              type: object
-              properties:
-                a:
-                  type: string
-                  description: A
-                b:
-                  type: string
-                  description: B
-              required:
-                - a
-                - b
+              $ref: "#/components/schemas/TwoArguments"
+      responses:
+        200:
+          description: Да
+        204:
+          description: Нет
+
+  /equal:
+    post:
+      operationId: api.equal
+      description: Равно
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/TwoArguments"
       responses:
         200:
           description: Да
